@@ -105,7 +105,18 @@
                 <?php foreach ($comment as $key => $value) {?>
                 <div class="media mb-4">
                     <div class="media-body shadow ps-5 py-3  rounded-pill">
-                        <h5 class="mt-0"><i class="bi bi-chat-left-text"></i>&nbsp;<?= $value['name'] ?? "Admin" ?></h5>
+                        <h5 class="mt-0"><i class="bi bi-chat-left-text"></i>
+                            <?php if($value['level']){
+                                if ($value['level'] != "Guru") {
+                                    echo $value['level'];
+                                }else{
+                                    echo "Pengguna";
+                                }
+                            }else{
+                                echo "Admin";
+                            }  ?>
+                            &nbsp;<?= $value['level'] ?? "Admin" ?>
+                        </h5>
                         <?= $value['comment'] ?>
                     </div>
                 </div>

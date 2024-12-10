@@ -23,7 +23,7 @@ class Login extends BaseController
         $model = new UserModel();
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
-        $user = $model->asObject()->where('username', $username)->first();
+        $user = $model->asObject()->where('username', $username)->whereIn('level',['Admin','Pimpinan'])->first();
         if ($user) {
             $verify_pass = password_verify($password, $user->password);
             if ($verify_pass) {

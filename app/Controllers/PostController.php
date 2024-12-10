@@ -167,20 +167,17 @@ class PostController extends BaseController
     }
 
     public function savecomment (){
-        if (session()->get('masuk') == true) {
             $id =  $this->request->getPost("id");
             $comment =  $this->request->getPost("comment");
             $data = [
-                "user_id" => session()->get('user_id'),
+                "user_id" => session()->get('user_id') ?? '3',
                 "post_id" => $id,
                 "comment" => $comment,
             ];
             $model = new CommentModel();
             $model->insert($data);
+            
             return redirect()->to("PostController/detail/".$id)->with("success", "Berhasil Memosting Komentar");
-        } else {
-            echo "<script>window.location.href='/Login';</script>";
-        }
     }
 
     // public function showSearchResults() {

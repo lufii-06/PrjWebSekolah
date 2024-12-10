@@ -75,8 +75,8 @@
                                 style="background-color: #38A3A5; border: 2px solid #38A3A5;">login</button>
                         </div>
                         <div class=" mt-3">
-                            <a href="<?= site_url("Home") ?>">Home</a>&nbsp;|
-                            <a href="<?= site_url("Login/register") ?>">Daftar</a>
+                            <a href="<?= site_url("Home") ?>">Home</a>&nbsp;
+                            <!-- |<a href="<?= site_url("Login/register") ?>">Daftar</a> -->
                         </div>
                     </form>
                 </div>

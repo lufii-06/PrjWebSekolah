@@ -82,7 +82,7 @@
                                                 class="text-danger fw-bold">Logout</a>
                                             <?php else: ?>
                                             <a href="<?= site_url("Login") ?>">Masuk</a>
-                                            <a href="<?= site_url("Login/register") ?>">Daftar</a>
+                                            <!-- <a href="<?= site_url("Login/register") ?>">Daftar</a> -->
                                             <?php endif; ?>
                                         </li>
                                     </ul>
